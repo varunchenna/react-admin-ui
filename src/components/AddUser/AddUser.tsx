@@ -1,6 +1,5 @@
 import { GridColDef } from '@mui/x-data-grid';
 import './Adduser.scss';
-import { useState } from 'react';
 
 type Props ={
   slug:string;
@@ -12,9 +11,6 @@ export default function AddUser(props: Props) {
 
 
 
-  const [inputFields, setInputFields] = useState()
-
-
 
 
   
@@ -22,9 +18,6 @@ export default function AddUser(props: Props) {
 
   const handlesubmit =(e: React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
-
-    //add new item
-    console.log("Added item" + " \n" + inputFields);
 
   }
 
@@ -38,7 +31,7 @@ export default function AddUser(props: Props) {
         .map((col)=>(
           <div className="item" key={col.field}>
             <label>{col.headerName}</label>
-            <input type={col.type} placeholder={col.field} value={inputFields} id={col.field}  autoComplete='off'/>
+            <input type={col.type} placeholder={col.field}  id={col.field}  autoComplete='off'/>
           </div>
         ))}
         <button type='submit'>Add</button>
